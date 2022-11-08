@@ -89,7 +89,7 @@ body {
     box-shadow: 1px 1px 1px;
 }
 
-#inputToAdd {
+input {
     background: transparent;
     font-weight: bold;
 }
