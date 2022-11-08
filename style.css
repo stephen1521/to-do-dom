@@ -1,0 +1,78 @@
+.hidden {
+    visibility: hidden;
+}
+
+.label {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+#inputForm {
+    padding: 5px;
+}
+
+#buttonList{
+    padding: 5px;
+}
+
+#removeCompleted {
+    background-color: orange;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px;
+}
+
+#removeAll {
+    background-color: red;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px;
+}
+
+#addButton {
+    background-color: green;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px;
+}
+
+#inputLabel {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.toDoListDivs {
+    border: 2px solid rgb(0, 0, 0, .2);
+    margin-bottom: -1px;
+    padding: 5px;
+    display: flex;
+    font-size: 20px;
+    color:  black;
+    font-weight: bold;
+}
+
+.toDoListButtons {
+    margin-left: auto;
+}
+
+body {
+    background-image: url('https://webdesigndev.com/wp-content/uploads/2020/11/Cover-Image-1.jpg.webp');
+}
+
+.editClass {
+    background-color: green;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px;
+    margin-right: 5px;
+}
+
+.removeClass {
+    background-color: red;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px;
+    margin-right: 5px;
+}
+
+.completeClass {
+    background-color: orange;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px;
+    margin-right: 5px;
+}
