@@ -54,6 +54,12 @@
 
 body {
     background-image: url('https://webdesigndev.com/wp-content/uploads/2020/11/Cover-Image-1.jpg.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: white;
+
 }
 
 .editClass {
@@ -81,4 +87,9 @@ body {
     background-color: green;
     border-radius: 5px;
     box-shadow: 1px 1px 1px;
+}
+
+#inputToAdd {
+    background: transparent;
+    font-weight: bold;
 }
