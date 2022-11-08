@@ -76,3 +76,9 @@ body {
     box-shadow: 1px 1px 1px;
     margin-right: 5px;
 }
+
+.editInputButton {
+    background-color: green;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px;
+}

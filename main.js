@@ -86,6 +86,7 @@ function editToDoItem(element){
             let inputButton = document.createElement('button');
             inputText.placeholder = 'Enter New Text'
             inputButton.innerText = 'Submit Changes';
+            inputButton.classList.add('editInputButton');
             form.appendChild(inputText);
             form.appendChild(inputButton);
             form.addEventListener('submit', function(e){
