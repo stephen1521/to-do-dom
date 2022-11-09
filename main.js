@@ -9,7 +9,7 @@ let editBool = true;
 //submit event for adding todo item
 inputForm.addEventListener('submit', function(e){
     e.preventDefault();
-    if(inputToAdd.value !== '' && editBool){
+    if(inputToAdd.value !== ''){
         //creates the elements needed for item
         let div = document.createElement('div');
         let toDoLabel = document.createElement('label');
@@ -43,11 +43,7 @@ inputForm.addEventListener('submit', function(e){
         editToDoItem(div);
         inputToAdd.value = '';
     }else {
-        if(!editBool){
-            alert('You must finish editing your todo item');
-        }else{
-            alert('You must enter a todo item before adding.');
-        }
+        alert('You must enter a todo item before adding.');
     }
 });
 
