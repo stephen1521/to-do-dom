@@ -53,7 +53,6 @@ function addClickToItem(element){
     label.addEventListener('click',function(){
         if(editBool){
             let buttonList = element.querySelectorAll('button');
-            let input = element.querySelector('input');
             for(let i of buttonList){
                 i.classList.toggle('hidden');
             }
