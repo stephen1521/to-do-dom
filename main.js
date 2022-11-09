@@ -9,7 +9,7 @@ let editBool = true;
 //submit event for adding todo item
 inputForm.addEventListener('submit', function(e){
     e.preventDefault();
-    if(inputToAdd.value !== ''){
+    if(inputToAdd.value !== '' && editBool){
         //creates the elements needed for item
         let div = document.createElement('div');
         let toDoLabel = document.createElement('label');
@@ -43,7 +43,11 @@ inputForm.addEventListener('submit', function(e){
         editToDoItem(div);
         inputToAdd.value = '';
     }else {
-        alert('You must enter a todo item before adding.');
+        if(!editBool){
+            alert('You must finish editing your todo item.');
+        }else{
+            alert('You must enter a todo item before adding.');
+        }
     }
 });
 
@@ -75,7 +79,11 @@ function completToDoItem(element){
 function removeToDoItem(element){
     let removeButton = element.querySelector('.removeClass');
     removeButton.addEventListener('click', function(){
-        element.style.display = 'none';
+        if(editBool){
+            element.style.display = 'none';
+        }else {
+            alert('You must finish editing your todo item');
+        }
     });
 }
 
@@ -111,6 +119,7 @@ function editToDoItem(element){
 
 // removes all to do items from the list
 removeAll.addEventListener('click', function(){
+    editBool = true;
     let divsList = toDoList.querySelectorAll('.toDoListDivs');
     for(let i of divsList){
         toDoList.removeChild(i);
@@ -119,11 +128,15 @@ removeAll.addEventListener('click', function(){
 
 // removes all completed to do items from the list
 removeCompleted.addEventListener('click', function(){
+    if(editBool){
     let divsList = toDoList.querySelectorAll('.toDoListDivs');
-    for(let i of divsList){
-        let text = i.querySelector('label');
-        if(text.classList[1] === 'label'){
-            toDoList.removeChild(i);
+        for(let i of divsList){
+            let text = i.querySelector('label');
+            if(text.classList[1] === 'label'){
+                toDoList.removeChild(i);
+            }
         }
+    }else{
+        alert('You must finish editing your todo item');
     }
 });
