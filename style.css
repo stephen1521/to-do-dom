@@ -93,3 +93,35 @@ input {
     background: transparent;
     font-weight: bold;
 }
+
+.removeClass:hover {
+    background-color: rgb(175, 18, 18);
+}
+
+.completeClass:hover {
+    background-color: rgb(179, 120, 11);
+}
+
+.editClass:hover {
+    background-color: rgb(9, 97, 9);
+}
+
+.editInputButton:hover {
+    background-color: rgb(9, 97, 9);
+}
+
+#removeAll:hover {
+    background-color: rgb(175, 18, 18);
+}
+
+#removeCompleted:hover {
+    background-color: rgb(179, 120, 11);
+}
+
+#addButton:hover {
+    background-color: rgb(9, 97, 9);
+}
+
+#inputToAdd {
+    width: 270px;
+}

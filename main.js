@@ -5,6 +5,7 @@ let toDoList = document.querySelector('#toDoList');
 let removeAll = document.querySelector('#removeAll');
 let removeCompleted = document.querySelector('#removeCompleted');
 let editBool = true;
+let arr = [];
 
 //submit event for adding todo item
 inputForm.addEventListener('submit', function(e){
@@ -42,7 +43,7 @@ inputForm.addEventListener('submit', function(e){
         editToDoItem(div);
         inputToAdd.value = '';
     }else {
-        alert('You must enter some text before adding.')
+        alert('You must enter a todo item before adding.')
     }
 });
 
@@ -51,8 +52,14 @@ function addClickToItem(element){
     let label = element.querySelector('label');
     label.addEventListener('click',function(){
         let buttonList = element.querySelectorAll('button');
+        let input = element.querySelector('input');
         for(let i of buttonList){
             i.classList.toggle('hidden');
+        }
+        try {
+            input.classList.toggle('hidden');
+        }catch(err){
+            arr.push(err);
         }
     });
 }
@@ -91,10 +98,14 @@ function editToDoItem(element){
             form.appendChild(inputButton);
             form.addEventListener('submit', function(e){
                 e.preventDefault();
-                let toBeEdit = element.querySelector('label');
-                toBeEdit.innerText = inputText.value;
-                element.removeChild(form);
-                editBool = true;
+                if(inputText.value !== ''){
+                    let toBeEdit = element.querySelector('label');
+                    toBeEdit.innerText = inputText.value;
+                    element.removeChild(form);
+                    editBool = true;
+                }else{
+                    alert('You must enter a todo item before submiting');
+                }
             });
         }
     });
@@ -118,6 +129,3 @@ removeCompleted.addEventListener('click', function(){
         }
     }
 });
-
-
-
