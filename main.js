@@ -125,7 +125,7 @@ removeCompleted.addEventListener('click', function(){
     let divsList = toDoList.querySelectorAll('.toDoListDivs');
     for(let i of divsList){
         let text = i.querySelector('label');
-        if(text.className === 'label'){
+        if(text.classList[1] === 'label'){
             toDoList.removeChild(i);
         }
     }
