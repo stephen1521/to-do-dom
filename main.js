@@ -5,12 +5,11 @@ let toDoList = document.querySelector('#toDoList');
 let removeAll = document.querySelector('#removeAll');
 let removeCompleted = document.querySelector('#removeCompleted');
 let editBool = true;
-let arr = [];
 
 //submit event for adding todo item
 inputForm.addEventListener('submit', function(e){
     e.preventDefault();
-    if(inputToAdd.value !== ''){
+    if(inputToAdd.value !== '' && editBool){
         //creates the elements needed for item
         let div = document.createElement('div');
         let toDoLabel = document.createElement('label');
@@ -44,7 +43,11 @@ inputForm.addEventListener('submit', function(e){
         editToDoItem(div);
         inputToAdd.value = '';
     }else {
-        alert('You must enter a todo item before adding.')
+        if(!editBool){
+            alert('You must finish editing your todo item');
+        }else{
+            alert('You must enter a todo item before adding.');
+        }
     }
 });
 
@@ -52,15 +55,14 @@ inputForm.addEventListener('submit', function(e){
 function addClickToItem(element){
     let label = element.querySelector('label');
     label.addEventListener('click',function(){
-        let buttonList = element.querySelectorAll('button');
-        let input = element.querySelector('input');
-        for(let i of buttonList){
-            i.classList.toggle('hidden');
-        }
-        try {
-            input.classList.toggle('hidden');
-        }catch(err){
-            arr.push(err);
+        if(editBool){
+            let buttonList = element.querySelectorAll('button');
+            let input = element.querySelector('input');
+            for(let i of buttonList){
+                i.classList.toggle('hidden');
+            }
+        }else{
+            alert('You must finish editing your todo item');
         }
     });
 }
@@ -85,7 +87,7 @@ function removeToDoItem(element){
 // allows user to edit the text of a todo item
 function editToDoItem(element){
     let editButton = element.querySelector('.editClass');
-    editButton.addEventListener('click', function(){
+    editButton.addEventListener('click', function(){ 
         if(editBool){
             editBool = false;
             let form = document.createElement('form');
