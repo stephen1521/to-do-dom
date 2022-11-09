@@ -125,3 +125,7 @@ input {
 #inputToAdd {
     width: 270px;
 }
+
+.toDoLabel:hover {
+    font-size: larger;
+}

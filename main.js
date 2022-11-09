@@ -31,6 +31,7 @@ inputForm.addEventListener('submit', function(e){
         remove.innerText = 'Remove';
         complete.innerText = 'Complete/Uncomplete';
         //adds class
+        toDoLabel.classList.add('toDoLabel');
         buttonDiv.classList.add('toDoListButtons');
         div.classList.add('toDoListDivs');
         edit.classList.add('hidden', 'editClass');
